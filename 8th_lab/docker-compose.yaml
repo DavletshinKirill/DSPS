@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db-lab8:
+    image: postgres:12.20
+    environment:
+      POSTGRES_DB: dbcompose
+      POSTGRES_USER: usrcompose
+      POSTGRES_PASSWORD: passcompose
+    volumes:
+      - ./init_scripts/creation_script.sql:/docker-entrypoint-initdb.d/creation_script.sql
+    ports:
+      - 5432:5432
+

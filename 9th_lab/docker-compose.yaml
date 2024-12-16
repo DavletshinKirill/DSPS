@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  db-lab9:
+    image: postgres:12.20
+    environment:
+      POSTGRES_DB: customers_db
+      POSTGRES_USER: usrcompose
+      POSTGRES_PASSWORD: passcompose
+    volumes:
+       - ./init_scripts:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
+
